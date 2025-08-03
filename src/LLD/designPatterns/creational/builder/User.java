@@ -1,9 +1,9 @@
 package LLD.designPatterns.creational.builder;
 /*
 ✅ Purpose of Builder Pattern
-    To construct complex objects step by step.
-    Useful when a class has multiple optional or required fields.
-    Promotes immutability and readable object creation.
+    - To construct complex objects step by step.
+    - Useful when a class has multiple optional or required fields.
+    - Promotes immutability and readable object creation.
  */
 public class User {
     private final String userId;

@@ -2,10 +2,10 @@ package LLD.designPatterns.creational.singleton;
 
 /*
 ✅ Purpose of Singleton Pattern
-    Ensure only one instance of a class is created during the application's lifetime.
-    Provides a global access point to that single instance.
-    Useful for shared resources like configuration, logging, cache, thread pools, etc.
-    Helps control resource usage and maintain consistent state across threads.
+    - Ensure only one instance of a class is created during the application's lifetime.
+    - Provides a global access point to that single instance.
+    - Useful for shared resources like configuration, logging, cache, thread pools, etc.
+    - Helps control resource usage and maintain consistent state across threads.
 */
 
 public class TVSet {
