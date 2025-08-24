@@ -1,0 +1,59 @@
+🚫 Demerits of synchronized locks:
+ ---------------------------------
+ 1. No fairness –
+    Threads don’t get lock in order, some threads may starve.
+
+ 2. No tryLock –
+    Can’t check if lock is free; must always wait.
+
+ 3. No timeout –
+    A waiting thread can’t give up after some time.
+
+ 4. Automatic release only –
+    If thread crashes, lock auto-released, but no manual unlock control.
+
+✅ Advantages of Custom Locks (ReentrantLock) over synchronized:
+
+1. tryLock() →
+   - You can test if the lock is available without waiting.
+   - Example: if(lock.tryLock()) { ... }
+
+2. Timeout option →
+   - A thread can wait for the lock only for a given time (avoids infinite waiting).
+   - Example: lock.tryLock(5, TimeUnit.SECONDS)
+
+3. Fairness policy →
+   - You can create a fair lock (true → FIFO order).
+   - synchronized does not guarantee fairness.
+
+4. Condition variables →
+   - ReentrantLock allows multiple wait/notify sets using Condition objects.
+   - synchronized only has one wait-set per lock.
+
+5. Manual unlock →
+   - Lock must be released manually (lock.unlock()).
+   - Gives developer more control compared to automatic release in synchronized.
+
+6. Interruptible lock acquisition →
+   - lock.lockInterruptibly() allows thread to stop waiting if interrupted.
+   - synchronized cannot do this.
+
+⚡ Summary:
+ReentrantLock (custom lock) = More flexible, fairer, supports timeout, tryLock,
+multiple conditions, and better control.
+synchronized = Simpler, but limited.
+
+
+ 🚫 Demerits of custom locks (ReentrantLock etc.):
+ ------------------------------------------------
+ 1. Must unlock manually –
+    If you forget unlock(), deadlock risk increases.
+
+ 2. More code complexity –
+    Needs try-finally structure, harder than synchronized.
+
+ 3. Performance overhead –
+    Slightly slower than synchronized in simple cases.
+
+ 4. Wrong usage can cause –
+    Deadlocks, starvation, or forgotten unlocks.
