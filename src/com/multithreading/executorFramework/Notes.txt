@@ -1,0 +1,33 @@
+Thread Pool and Executor Framework in Java
+==========================================
+
+1. Thread Pool
+--------------
+- A thread pool is a collection of pre-initialized worker threads that are kept ready to perform tasks.
+- Instead of creating a new thread for each task, threads are reused from the pool.
+- This improves performance by reducing the overhead of thread creation and destruction.
+- Useful in scenarios where a large number of short-lived tasks need to be executed.
+
+Advantages of Thread Pool:
+- Reuse of threads -> Better performance.
+- Controls the number of concurrent threads -> Prevents resource exhaustion.
+- Simplifies task execution management.
+
+
+2. Executor Framework
+----------------------
+- Introduced in Java 5 (java.util.concurrent package).
+- Provides a higher-level replacement for working directly with threads.
+- Decouples task submission from task execution.
+- Allows better control and management of threads.
+
+Key Interfaces:
+- Executor: A simple interface that supports launching new tasks.
+- ExecutorService: Extends Executor, provides methods to manage lifecycle (shutdown, submit, invokeAll, etc.).
+- ScheduledExecutorService: Supports task scheduling with delays or periodic execution.
+
+Factory Methods (from Executors class):
+- newFixedThreadPool(int n): Creates a pool with fixed number of threads.
+- newCachedThreadPool(): Creates a pool that creates new threads as needed, reuses existing ones when available.
+- newSingleThreadExecutor(): A pool with only one thread.
+- newScheduledThreadPool(int n): A pool that can schedule commands after a delay or periodically.
