@@ -30,8 +30,6 @@ package com.lld.designPatterns.behavioral.state;
 public class Client {
     public static void main(String[] args) {
         VendingMachine machine = new VendingMachine();
-        machine.pressButton();
-        machine.insertCoin();
         machine.insertCoin();
         machine.pressButton();
         machine.pressButton();
